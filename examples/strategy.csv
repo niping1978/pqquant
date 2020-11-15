@@ -1,0 +1,16 @@
+使用方式，在例子中替换掉   's_first_pctchange_2>=9.94 and s_first_turnover_1>15' 即可，比如:
+strategy = 's_first_turnover_1>5 and s_first_pctchange_1>1 and s_first_pctchange_2>1 and (s_sum_bb_2+s_sum_mb_2)>(s_sum_bs_2+s_sum_ms_2)*1.7 and s_first_bbrank_1<10 and s_first_bb_1>5000*10000'
+
+类型,名称,内容,角色
+激进型,向东北,s_first_turnover_1>5 and s_first_pctchange_1>1 and s_first_pctchange_2>1 and (s_sum_bb_2+s_sum_mb_2)>(s_sum_bs_2+s_sum_ms_2)*1.7 and s_first_bbrank_1<10 and s_first_bb_1>5000*10000,w
+稳健型,庄家吃货,(s_first_bs_1+s_first_ms_1)/(s_first_bb_1+s_first_mb_1) > 1.5 and s_first_pctchange_1>0 and s_first_pctchange_1<5 and s_first_turnover_1>5 and s_first_turnover_1<20  and (s_first_bs_1/s_ma_bs_5)>1.5,z
+激进型,向东北z,s_first_turnover_1>5 and s_first_pctchange_1>3 and s_first_bb_1>4000*10000 and s_first_bb_1 > s_first_bs_1*2 and s_first_sb_1>s_first_ss_1*1.3,w
+激进型,火焰山,s_first_bb_1 > 20000*10000 and s_first_turnover_1>30 and s_first_pctchange_1>3 and s_first_bb_1 > s_first_bs_1*1.2,w
+稳健型,冰山,s_first_bs_1>s_first_bb_1*1.8 and s_first_pctchange_1 >-2 and s_first_pctchange_1<2 and s_first_turnover_1>8 and s_first_ss_1 > s_first_sb_1*1.1 and s_ma_close_3>s_ma_close_5 and s_first_bs_1>5000*10000 and s_first_pctchange_2>-1 and s_first_vol_1 < s_max_vol_10,z
+稳健型,冰山z,s_first_sb_1>s_first_ss_1*1.2 and s_first_turnover_1 > 8 and s_ratio_bs_5>1.2 and (s_first_close_1-s_first_high_1)/s_first_high_1>-0.02 and s_first_bs_1 > 2000*10000,z
+稳健型,ma线,s_upcross_close_30_60==1 and s_ma_close_5 > s_ma_close_10 and s_ma_close_10 > s_ma_close_30 and s_ma_close_60 > s_ma_close_120,w
+超稳健型,金针探底,s_first_pctchange_2<0 and s_first_pctchange_3<0 and s_first_pctchange_4<0 and s_first_pctchange_5<0 and s_first_pctchange_6<0 and s_first_pctchange_1>0 and s_ma_close_30 > s_ma_close_60,w
+超稳健型,金针探底Q,s_first_turnover_1>5 and s_first_pctchange_1>3 and s_first_bb_1>4000*10000 and s_first_bb_1 > s_first_bs_1*2 and s_first_sb_1>s_first_ss_1*1.3 and s_first_pctchange_2 <0 and s_first_pctchange_3 <0 and s_first_pctchange_4 <0 and s_first_pctchange_5 <0,w
+超稳健型,出水芙蓉,s_first_ma30_1>s_first_ma30_5 and s_first_ma10_1>s_first_ma10_10 and s_first_ma5_1 > s_first_ma5_3 and s_ma_close_13 > s_ma_close_34 and s_ma_close_34 > s_ma_close_55 and s_ma_close_55 > s_ma_close_180 and s_first_close_1 > s_ma_close_5  and (s_macdfast_close_12_26_9 - s_macdslow_close_12_26_9-s_macdsignal_close_12_26_9)>0 and (s_macdfast_close_12_26_9 - s_macdslow_close_12_26_9)/s_macdslow_close_12_26_9<0.01,w
+激进型,抓龙头,s_first_pctchange_1>=9.99 and (s_first_tbs_1-s_first_bs_1)<=0.3*s_first_bs_1 and (s_first_tsb_1 - s_first_sb_1)<=s_first_sb_1*0.5,w
+稳健型,次日钱包,(s_first_pctchange_1 - s_first_pctchange_2) > 0.97 and 9.5> s_first_pctchange_1>-4 and 0.4 >= (s_sum_tbb_1 + s_sum_tmb_1 + s_sum_tsb_1) /(s_sum_tbs_3 + s_sum_tms_3 + s_sum_tss_3) >= 0.2 and s_first_open_1 < 1.001*s_max_close_22 and s_first_close_1/s_first_close_20 >= 1.2 and 1.2 >= (s_sum_bb_1 + s_sum_mb_1) /(s_sum_bs_2 + s_sum_ms_2) >= 0.21 and 0.69 >= (s_sum_tbb_2 + s_sum_tmb_2 + s_sum_tsb_2) /(s_sum_tbs_3 + s_sum_tms_3 + s_sum_tss_3) >= 0.68 and s_sum_tbb_1 >= s_sum_bb_1 > 0,w
