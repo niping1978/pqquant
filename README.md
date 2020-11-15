@@ -20,6 +20,8 @@ TranID,Time,Price,Volume,SaleOrderVolume,BuyOrderVolume,Type,SaleOrderID,SaleOrd
 
 我们提供数据、策略服务、软件平台， 开源的是策略服务，其中自己写策略，发送给策略服务器，返回满足条件的股票。
 因子手册参见 www.simpledata.cn
+示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，
+strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
 例子:
 import requests
 import pandas as pd
@@ -29,12 +31,10 @@ import re
 real_flask_server = 'http://www.simpledata.cn:8200'
 start = '2020-06-15'
 end = '2020-06-15'
-#示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，更多因子参见手册 www.simpledata.cn
 strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
-#访问接口
 r = requests.get(real_flask_server + '/query_engine?query={}&start={}&end={}'.format(urllib.parse.quote(strategy, 'utf-8'),
                                                                                              start,
-                                                                                             end))
+                                                                                              end))
 j = eval(r.text)
 frame = pd.DataFrame(j['data'], index=pd.MultiIndex.from_tuples(j['index']), columns=j['columns'])
 返回结果如下:
