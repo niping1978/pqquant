@@ -19,12 +19,14 @@ TranID,Time,Price,Volume,SaleOrderVolume,BuyOrderVolume,Type,SaleOrderID,SaleOrd
 3. 对于复盘，我们提供了 pq投顾.exe, 应该是目前最好用的复盘工具和股票选择器软件, 下载地址:www.simpledata.cn。
 
 
-我们提供数据、策略服务、软件平台， 开源的是策略服务，其中自己写策略，发送给策略服务器，返回满足条件的股票。
+我们提供数据、策略服务、软件平台，其中自己写策略，发送给策略服务器，返回满足条件的股票。
 因子手册参见 www.simpledata.cn
-简单示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，
-strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
 
-其他示例参考  example中的  strategy.csv文件
+简单示例策略，
+strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
+代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，
+
+策略执行，参考 strategy.py 文件。
 
 备注:
 目前策略服务器开放时间:
