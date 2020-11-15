@@ -29,9 +29,9 @@ import re
 real_flask_server = 'http://www.simpledata.cn:8200'
 start = '2020-06-15'
 end = '2020-06-15'
-### 示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，更多因子参见手册 www.simpledata.cn
+#示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，更多因子参见手册 www.simpledata.cn
 strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
-### 访问接口
+#访问接口
 r = requests.get(real_flask_server + '/query_engine?query={}&start={}&end={}'.format(urllib.parse.quote(strategy, 'utf-8'),
                                                                                              start,
                                                                                              end))
