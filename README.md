@@ -22,26 +22,3 @@ TranID,Time,Price,Volume,SaleOrderVolume,BuyOrderVolume,Type,SaleOrderID,SaleOrd
 因子手册参见 www.simpledata.cn
 示例策略，代表前一天涨幅大于9.94%， 并且当天的换手率大于15%的股票，
 strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
-例子:
-import requests
-import pandas as pd
-import urllib
-import time
-import re
-real_flask_server = 'http://www.simpledata.cn:8200'
-start = '2020-06-15'
-end = '2020-06-15'
-strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
-r = requests.get(real_flask_server + '/query_engine?query={}&start={}&end={}'.format(urllib.parse.quote(strategy, 'utf-8'),
-                                                                                             start,
-                                                                                              end))
-j = eval(r.text)
-frame = pd.DataFrame(j['data'], index=pd.MultiIndex.from_tuples(j['index']), columns=j['columns'])
-返回结果如下:
-		        s_first_pctchange_2	s_first_pfturnover_1
-2020-06-12  000567	10.007	52.693
-            000612	9.980	23.171
-            000668	10.016	20.665
-            000700	9.972	25.796
-            000936	9.970	21.739
-            002160	9.954	15.594
