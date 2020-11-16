@@ -32,7 +32,7 @@ strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
 
 策略执行，参考 strategy.py 文件。
 
-欢迎关注 向财而生(量化实战) 订阅号
+欢迎关注 向财而生(量化实战) 订阅号<br>
 [![PQ]](https://github.com)
 [PQ]:https://github.com/niping1978/pqquant/blob/main/%E8%AE%A2%E9%98%85%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg
 
