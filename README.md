@@ -32,6 +32,13 @@ strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
 
 策略执行，参考 strategy.py 文件。
 
+经典策略解析
+-----------
+>>庄家吃货
+(s_first_bs_1+s_first_ms_1)/(s_first_bb_1+s_first_mb_1) > 1.5 and s_first_pctchange_1>0 and s_first_pctchange_1<5 and s_first_turnover_1>5 and s_first_turnover_1<20  and (s_first_bs_1/s_ma_bs_5)>1.5
+本策略描述了在庄家主动卖较多，但是价格没有下降的，换手率也较高，并且(s_first_bs_1/s_ma_bs_5)>1.5 大单卖的量比平均5天来的平均量大于1.5倍，
+
+
 >>欢迎关注 向财而生(量化实战) 订阅号<br>
 ![QRCODE](https://github.com/niping1978/pqquant/blob/main/qrcode.jpg)
 
