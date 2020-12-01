@@ -25,6 +25,11 @@ TranID,Time,Price,Volume,SaleOrderVolume,BuyOrderVolume,Type,SaleOrderID,SaleOrd
 >>我们提供数据、策略服务、软件平台，其中自己写策略，发送给策略服务器，返回满足条件的股票。<br>
 >>因子手册参见 www.simpledata.cn<br>
 
+因子说明
+--------
+系统中不仅进行了因子开发，并且对因子进行了操作，
+
+
 简单示例策略
 -----------
 strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
@@ -39,7 +44,8 @@ strategy = 's_first_pctchange_2>=9.94 and s_first_turnover_1>15'
 本策略描述了在庄家主动卖较多，但是价格没有下降的，换手率也较高，并且(s_first_bs_1/s_ma_bs_5)>1.5 大单卖的量比平均5天来的平均量大于1.5倍，
 
 
->>欢迎关注 向财而生(量化实战) 订阅号<br>
+欢迎关注 向财而生(量化实战) 订阅号<br>
+-------------------------------
 ![QRCODE](https://github.com/niping1978/pqquant/blob/main/qrcode.jpg)
 
 备注:
